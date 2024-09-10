@@ -18,7 +18,7 @@ export const navs = [
 ];
 
 export const router = [
-  { path: "/", key: "general", category: "general", country: "in" },
+  { path: "/", key: "general", category: "india", country: "in" },
   { path: "/categories/general", key: "general", category: "general", country: "in" },
   { path: "/categories/business", key: "business", category: "business", country: "in" },
   { path: "/categories/sports", key: "sports", category: "sports", country: "in" },
