@@ -28,11 +28,6 @@ export const router = [
   { path: "/categories/technology", key: "technology", category: "technology", country: "in" }
 ];
 
-News.defaultProps = {
-  country: "in",           // Default to India
-  newscategory: "general", // Default to general category
-};
-
 export const summary = "Channel and PublishedAt";
 export const newsChannel = (channel) => `${channel}`;
 export const lastUpdate = (published) =>
