@@ -19,6 +19,16 @@ function News(props) {
     return string.charAt(0).toUpperCase() + string.slice(1);
   };
 
+  const truncateDescription = (description) => {
+    if (!description) return ""; 
+    const maxLength = 350; // Rough estimate for 5 to 6 lines
+    if (description.length <= maxLength) return description;
+
+    const truncated = description.slice(0, maxLength);
+    const lastSentenceEnd = truncated.lastIndexOf(". ");
+    return truncated.slice(0, lastSentenceEnd + 1); // Complete the sentence
+  };
+
   const category = newscategory;
   const title = capitaLize(category);
   document.title = `${capitaLize(title)} - News`;
@@ -54,7 +64,7 @@ function News(props) {
                   <Col sm={12} md={6} lg={4} xl={3} style={card} key={uuidv4()}>
                     <NewsItem
                       title={element.title}
-                      description={element.description}
+                      description={truncateDescription(element.description)}
                       published={element.publishedAt}
                       channel={element.source.name}
                       alt="News image"
@@ -77,7 +87,7 @@ function News(props) {
 
 News.defaultProps = {
   country: "in",
-  newscategory: "india",
+  newscategory: "general",
 };
 
 News.propTypes = {
