@@ -77,7 +77,7 @@ function News(props) {
 
 News.defaultProps = {
   country: "in",
-  newscategory: "artificial intelligence",
+  newscategory: "india",
 };
 
 News.propTypes = {
